@@ -26,7 +26,10 @@ export class AppComponent {
     });
 
     this.convertedWords = convertedWords.join(' ');
-    const savedSearch: SavedSearch = { searchedSentence: sentence, convertedSentence: this.convertedWords };
+    const savedSearch: SavedSearch = new SavedSearch();
+    savedSearch.convertedSentence = this.convertedWords;
+    savedSearch.searchedSentence = sentence;
+
     this.wordsSearchedHistory.push(savedSearch);
   }
 
