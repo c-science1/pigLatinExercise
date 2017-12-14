@@ -1,18 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <input #box>
-  <button (click)="onClickMe(box.value)">Convert to PigLatin</button>
-  <p>converted to: {{convertedWords}}</p>
-
-  <h2>History of words/sentences searched</h2>
-  <ng-container *ngFor="let wordSearch of wordsSearchedHistory let i=index;">
-    <p>{{i+1}}. {{ wordSearch.searchedSentence }}
-       <strong>converted to</strong>
-        {{ wordSearch.convertedSentence }}</p>
-  </ng-container>
+<div class="container text-center">
+  <div class="row">
+    <h2>
+      Welcome to {{ title }}!
+    </h2>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <label for="searchWord">English Sentence/Word:</label>
+        <input #box class="form-control" id="searchWord">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <button (click)="onClickMe(box.value)" class="btn btn-primary">Convert to PigLatin</button>
+    </div>
+  </div>
+  <div class="row">
+    <p>converted to: {{convertedWords}}</p>
+  </div>
+  <div class="row">
+    <h4>History of words/sentences searched</h4>
+    <ng-container *ngFor="let wordSearch of wordsSearchedHistory let i=index;">
+      <p>{{i+1}}. {{ wordSearch.searchedSentence }}
+        <strong>converted to</strong>
+          {{ wordSearch.convertedSentence }}</p>
+    </ng-container>
+  </div>
 </div>
 
 
